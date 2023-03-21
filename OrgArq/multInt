@@ -1,0 +1,14 @@
+.text
+	li $t0, 5
+	li $t1, 24
+	mul $s0, $t0, $t1
+	#Multiplica t0 * t1
+	
+	li $v0, 1
+	move $a0, $s0
+	syscall
+	#Para multiplicar por potencia de dois, pode usar o shift left logico
+	#sll $s0, $t0, 2 -> move t0 duas casas pra esquerda s0 = t0 * 4
+	#mais barato que usar o mul
+	li $v0, 10
+	syscall

@@ -1,0 +1,14 @@
+.text
+	li $t0, 32
+	li $t1, 5
+	div $t0, $t1
+	 #parte inteira cai no registrador lo
+	 #Resto cai no hi
+	
+	#mover lo para s0
+	#mover hi para s1
+	mflo $s0
+	mfhi $s1
+	
+	#para dividir por dois podemos fazer um shift right
+	srl $s2, $t0 2
